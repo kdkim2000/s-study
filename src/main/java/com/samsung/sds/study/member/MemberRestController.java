@@ -57,4 +57,13 @@ public class MemberRestController {
         return memberRepository.save(member);
     }
 
+    @PostMapping("/member")
+    public Member setMember(@RequestParam String name,
+                            @RequestParam String email){
+        Member member = new Member();
+        member.setEmail(email);
+        member.setName(name);
+        return memberRepository.save(member);
+    }
+
 }
