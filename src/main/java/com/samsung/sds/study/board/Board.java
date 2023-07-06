@@ -1,7 +1,12 @@
 package com.samsung.sds.study.board;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 public class Board {
     @Id
