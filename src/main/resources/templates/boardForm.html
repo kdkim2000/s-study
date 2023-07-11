@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,16 +11,16 @@
 </head>
 <body class="p-3 m-0 border-0 bd-example">
 <H2>Board</H2>
-<form>
-  <input type="hidden">
+<form action="#" th:action="@{/board/form}" th:object="${board}" method="post">
+  <input type="hidden" th:field="*{id}">
   <div class="mb-3">
-    <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+    <input type="text" class="form-control" id="inputTitle" placeholder="Title" th:field="*{title}">
   </div>
   <div class="mb-3">
-    <textarea class="form-control" id="intpuContent" rows="10" placeholder="Contents"></textarea>
+    <textarea class="form-control" id="intpuContent" rows="10" placeholder="Contents" th:field="*{contents}"></textarea>
   </div>
   <div class="text-end">
-    <a type="button" class="btn btn-outline-primary" href="list.html">취소</a>
+    <a type="button" class="btn btn-outline-primary" th:href="@{/board/list}">취소</a>
     <button type="submit" class="btn btn-outline-primary">확인</button>
   </div>
 </form>
